@@ -14,4 +14,10 @@ class UniClass extends Model
     {
         return $this->belongsTo('App\User', 'user_id', 'id');
     }
+
+
+    public function grades()
+    {
+        return $this->hasMany('App\Grade');
+    }
 }

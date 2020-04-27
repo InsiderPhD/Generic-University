@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['as'=>'api', 'prefix'=>'api'], function () {
+    Route::resource('grades', 'GradeController', ['except' => ['edit']]);
+    Route::resource('users', 'UserController', ['except' => ['edit']]);
+});
