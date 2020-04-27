@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['as'=>'api', 'prefix'=>'api'], function () {
-    Route::resource('grades', 'GradeController', ['except' => ['edit']]);
-    Route::resource('users', 'UserController', ['except' => ['edit']]);
+Route::group(['as'=>'api.', 'prefix'=>'api'], function () {
+    Route::resource('grades', 'GradeController', ['except' => ['edit', 'create']]);
+    Route::resource('users', 'UserController', ['except' => ['edit', 'create']]);
+    Route::resource('classes', 'ClassController', ['except' => ['edit', 'create']]);
 });

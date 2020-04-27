@@ -1,23 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+<div class="container text-center">
+    <img src="{{asset('images/logo.png')}}" height="400"/>
+    <h1>UNDER CONSTRUCTION</h1>
+    <p><img src="https://media.giphy.com/media/fZ2YagbBRmL2qIWKnR/giphy.gif"></p>
+    <p>Made by <span id="creator"></span></p>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+    <script>
+        $.ajax({
+            url: "{{route('api.users.show', ['6'])}}",
+            type: 'GET',
+            dataType: 'json',
+            success: function (json) {
+                console.log(json);
+                $( "#creator" ).text(json['name']);
+            }
+        });
+    </script>
+
     </div>
 </div>
 @endsection

@@ -41,6 +41,6 @@ class GradeController extends Controller
 
     function destroy($id)
     {
-        $this->model->destroy($id);
+        return $this->model->destroy($id);
     }
 }
