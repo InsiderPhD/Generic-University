@@ -29,7 +29,8 @@ class UniClassSeeder extends Seeder
             $class->teacher()->associate(\App\User::find(7));
             $class->save();
 
-            $class->users()->saveMany(\App\User::all());
+            // stop the teacher and it guy beign added
+            $class->users()->saveMany(\App\User::where('id', '<', 6)->get());
             $class->save();
         }
     }
