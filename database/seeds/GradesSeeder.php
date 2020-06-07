@@ -11,7 +11,8 @@ class GradesSeeder extends Seeder
      */
     public function run()
     {
-        foreach(\App\User::where('id', '<', 6)->get() as $user)
+        $student= \App\Role::where("name" , "=", "Student")->first();
+        foreach(\App\User::where("role_id", '=', $student->id)->get() as $user)
         {
             // add a grade for each user for each class
 

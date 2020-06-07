@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             $user->name = $faker->firstName . ' ' . $faker->lastName;
             $user->email = $faker->email;
             $user->password = 'password';
-            $user->role()->associate(\App\Role::find(2));
+            $user->role()->associate(\App\Role::where("name" , "=", "Student")->first());
             $user->save();
         }
 
@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
         $user->name = 'IT ' . $faker->firstName . ' ' . $faker->lastName;
         $user->email = $faker->email;
         $user->password = 'password';
-        $user->role()->associate(\App\Role::find(1));
+        $user->role()->associate(\App\Role::where("name" , "=", "Admin")->first());
         $user->save();
 
 
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
         $user->name = 'Dr ' . $faker->firstName . ' ' . $faker->lastName;
         $user->email = $faker->email;
         $user->password = 'password';
-        $user->role()->associate(\App\Role::find(3));
+        $user->role()->associate(\App\Role::where("name" , "=", "Teacher")->first());
         $user->save();
     }
 }

@@ -30,4 +30,5 @@ Route::group(['as'=>'api.', 'prefix'=>'api'], function () {
         Route::get('delete', 'AdminController@delete')->name('delete');
         Route::get('restore', 'AdminController@repopulate')->name('repop');
     });
+
 });
