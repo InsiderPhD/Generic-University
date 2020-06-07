@@ -24,4 +24,10 @@ Route::group(['as'=>'api.', 'prefix'=>'api'], function () {
     Route::resource('grades', 'GradeController', ['except' => ['edit', 'create']]);
     Route::resource('users', 'UserController', ['except' => ['edit', 'create']]);
     Route::resource('classes', 'ClassController', ['except' => ['edit', 'create']]);
+    Route::resource('roles', 'RoleController', ['except' => ['edit', 'create']]);
+    Route::group(['as'=>'admin.', 'prefix'=>'admin', 'middleware' => 'auth'], function () {
+        Route::get('/', 'AdminController@index')->name('home');
+        Route::get('delete', 'AdminController@delete')->name('delete');
+        Route::get('restore', 'AdminController@repopulate')->name('repop');
+    });
 });

@@ -26,11 +26,11 @@ class UniClassSeeder extends Seeder
             $class = new \App\UniClass();
             $class->name = $classes->get($i);
             $class->description = $faker->bs;
-            $class->teacher()->associate(\App\User::find(7));
+            $class->teacher()->associate(\App\User::where('role_id', '=', 3)->first());
             $class->save();
 
             // stop the teacher and it guy beign added
-            $class->users()->saveMany(\App\User::where('id', '<', 6)->get());
+            $class->users()->saveMany(\App\User::where('role_id', '=', 2)->get());
             $class->save();
         }
     }
