@@ -25,7 +25,7 @@ Find out more about the [OWASP API Top 10](https://owasp.org/www-project-api-sec
 9) Restore everything
 
 ### Inital Setup
-You will need to setup PHP, a webserver and a database suitable for laravel, you can use something like XAMPP on windows, or set it up yourself, [to these requirements](https://laravel.com/docs/7.x/installation#server-requirements). You can google to find manual setup instructions such as [1](https://websiteforstudents.com/install-laravel-php-framework-on-ubuntu-16-04-17-10-18-04-with-apache2-and-php-7-2-support/).
+You will need to setup PHP, a webserver and a database suitable for laravel, you can use something like XAMPP on windows, or set it up yourself, [to these requirements](https://laravel.com/docs/7.x/installation#server-requirements). You can google to find manual setup instructions, @kofler86 has contributed a [setup guide for Kali Linux](https://github.com/InsiderPhD/Generic-University/blob/master/KaliSetup.md).
 
 1. Clone `git clone https://github.com/InsiderPhD/Generic-University/`
 2. run `composer update`
