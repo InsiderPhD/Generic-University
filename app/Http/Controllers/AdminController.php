@@ -6,9 +6,12 @@ use App\Grade;
 use App\Role;
 use App\UniClass;
 use App\User;
+use GradesSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use UniClassSeeder;
+use UserSeeder;
 
 class AdminController extends Controller
 {
@@ -48,7 +51,11 @@ class AdminController extends Controller
     {
         if(Auth::user()->role_id == 1) {
             $dbseed = new \DatabaseSeeder();
-            $dbseed->run();
+
+            $dbseed->call(UserSeeder::class);
+            $dbseed->call(UniClassSeeder::class);
+            $dbseed->call(GradesSeeder::class);
+
 
             return "database repopulated";
         } else {
