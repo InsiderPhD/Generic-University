@@ -13,6 +13,11 @@ class PageController extends Controller
     {
         return view('contact');
     }
+    public function contactSubmit(Request $request)
+    {
+        return view('contactSubmit')->with('input', $request->input());
+
+    }
 
 
     public function vulnerability()

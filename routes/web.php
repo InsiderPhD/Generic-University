@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/contact', 'PageController@contact')->name('contact');
+Route::get('/contact/submit', 'PageController@contactSubmit')->name('contact.submit');
 Route::get('/vulnerability', 'PageController@vulnerability')->name('vulnerability');
 Route::post('/vulnerability', 'PageController@vulnerabilitySubmit')->name('vulnerability.submit');
 
