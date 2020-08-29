@@ -27,7 +27,10 @@ class RoleController extends Controller
 
     function show($id)
     {
-        return $this->model->find($id);
+        if ($this->model->find($id) != null)
+            return $this->model->find($id);
+        else
+            return "{'not found':true}";
     }
 
     function update(Request $request, $id)
