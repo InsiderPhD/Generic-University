@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(UniClassSeeder::class);
         $this->call(GradesSeeder::class);
+        $this->call(VulnerabilitySeeder::class);
     }
 }

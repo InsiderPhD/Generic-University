@@ -21,8 +21,12 @@ Find out more about the [OWASP API Top 10](https://owasp.org/www-project-api-sec
 5) Make an account
 6) Login to your account
 7) Access admin control panel
-8) Delete everything
-9) Restore everything
+8) *NEW* Find out what vulnerabilities the IT admins have ignored
+9) *NEW* Make your account an admin
+10) *NEW* Access the admin control panel
+11) *NEW* Fire a blind XSS in the admin control panel and validate with your new admin account
+12) Delete everything
+13) Restore everything
 
 ### Inital Setup
 You will need to setup PHP, a webserver and a database suitable for laravel, you can use something like XAMPP on windows, or set it up yourself, [to these requirements](https://laravel.com/docs/7.x/installation#server-requirements). You can google to find manual setup instructions, @kofler86 has contributed a [setup guide for Kali Linux](https://github.com/InsiderPhD/Generic-University/blob/master/KaliSetup.md).

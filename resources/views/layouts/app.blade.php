@@ -74,6 +74,10 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer style="text-align: center;">
+            <a href="{{route('contact')}}">Contact IT</a>  |  <a href="{{route('vulnerability')}}">Report a Security Vulnerability</a>
+        </footer>
     </div>
 </body>
 </html>

@@ -6,6 +6,7 @@ use App\Grade;
 use App\Role;
 use App\UniClass;
 use App\User;
+use App\Vulnerability;
 use GradesSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -63,5 +64,20 @@ class AdminController extends Controller
             return "permission required :(";
         }
 
+    }
+
+    public function dashboard(){
+        echo '<p>Welcome to the admin dashboard</p>';
+        echo '<p><a href="'.route('admin.security').'">Security Vulnerabilities</a></p>';
+    }
+
+    public function security()
+    {
+        $vulns = Vulnerability::all();
+
+        foreach ($vulns as $vuln)
+        {
+            echo '<p>vuln: ' . $vuln->issue . '</p>';
+        }
     }
 }

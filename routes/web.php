@@ -15,10 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/contact', 'PageController@contact')->name('contact');
+Route::get('/vulnerability', 'PageController@vulnerability')->name('vulnerability');
+Route::post('/vulnerability', 'PageController@vulnerabilitySubmit')->name('vulnerability.submit');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['as'=>'admin.', 'prefix'=>'admin',  'middleware' => \App\Http\Middleware\Admin::class], function () {
+    Route::get('/', 'AdminController@dashboard')->name('dashboard');
+    Route::get('security', 'AdminController@security')->name('security');
+});
 
 Route::group(['as'=>'api.', 'prefix'=>'api'], function () {
     Route::resource('grades', 'GradeController', ['except' => ['edit', 'create']]);
@@ -29,6 +37,7 @@ Route::group(['as'=>'api.', 'prefix'=>'api'], function () {
         Route::get('/', 'AdminController@index')->name('home');
         Route::get('delete', 'AdminController@delete')->name('delete');
         Route::get('restore', 'AdminController@repopulate')->name('repop');
+        Route::resource('vulnerabilities', 'VulnerabilityController', ['except' => ['edit', 'create']]);
     });
 
 });
