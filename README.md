@@ -20,7 +20,7 @@ Find out more about the [OWASP API Top 10](https://owasp.org/www-project-api-sec
 4) Edit someone's grade
 5) Make an account
 6) Login to your account
-7) Access admin control panel
+7) Access admin API
 8) *NEW* Find out what vulnerabilities the IT admins have ignored
 9) *NEW* Make your account an admin
 10) *NEW* Access the admin control panel
