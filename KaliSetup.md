@@ -29,7 +29,7 @@ DB_PASSWORD=password
 
 :wq ( in case you didn't know how to quit vim :)
 
-18. php artisian migrate
+18. php artisan migrate
 19. php artisan db:seed
 20. php artisan key:generate
 21. php artisan serve
