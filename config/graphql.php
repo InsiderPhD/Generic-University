@@ -116,6 +116,7 @@ return [
             'mutation' => [
                 \App\GraphQL\Mutations\UpdateUserPasswordMutation::class,
                 \App\GraphQL\Mutations\UserMutation::class,
+                \App\GraphQL\Mutations\GradeMutation::class,
                 // 'example_mutation'  => ExampleMutation::class,
             ],
             'middleware' => [],
