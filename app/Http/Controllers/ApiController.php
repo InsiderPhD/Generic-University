@@ -14,16 +14,19 @@ class ApiController extends Controller
         $this->model = \App::make($modelClass);
     }
 
+    // GET /resource/
     function index()
     {
         return $this->model::all();
     }
 
+    // POST /resource/
     function store(Request $request)
     {
         return $this->model->create($request->input());
     }
 
+    // GET /resource/1
     function show($id)
     {
         if ($this->model->find($id) != null)
@@ -32,6 +35,7 @@ class ApiController extends Controller
             return "{'not found':true}";
     }
 
+    // PUT /resource/1
     function update(Request $request, $id)
     {
 
@@ -42,6 +46,7 @@ class ApiController extends Controller
         return json_encode('Resource: ' . $id . ' with presented ID does not exist.');
     }
 
+    // DELETE resource/1
     function destroy($id)
     {
         $this->model->destroy($id);

@@ -19,14 +19,19 @@ Find out more about the [OWASP API Top 10](https://owasp.org/www-project-api-sec
 3) Find out what grades everyone got in a class
 4) Edit someone's grade
 5) Make an account
-6) Login to your account
-7) Access admin API
-8) *NEW* Find out what vulnerabilities the IT admins have ignored
-9) *NEW* Make your account an admin
-10) *NEW* Access the admin control panel
-11) *NEW* Fire a blind XSS in the admin control panel and validate with your new admin account
-12) Delete everything
-13) Restore everything
+6) Access the GraphQL API
+7) Change another account's password
+8) Login to your account
+9) Access admin API
+10) Find out what vulnerabilities the IT admins have ignored
+11) Make your account an admin
+12) Access the admin control panel
+13) Fire a blind XSS in the admin control panel and validate with your new admin account
+14) Delete everything
+15) Restore everything
+
+### Docker **NEW**
+Thanks to busk3r, you can setup Generic University using docker. Simply [install Docker](https://www.docker.com) and [follow the commands from the docker page](https://hub.docker.com/r/busk3r/genericuniversity). Thank you!
 
 ### Inital Setup
 You will need to setup PHP, a webserver and a database suitable for laravel, you can use something like XAMPP on windows, or set it up yourself, [to these requirements](https://laravel.com/docs/7.x/installation#server-requirements). You can google to find manual setup instructions, @kofler86 has contributed a [setup guide for Kali Linux](https://github.com/InsiderPhD/Generic-University/blob/master/KaliSetup.md).
