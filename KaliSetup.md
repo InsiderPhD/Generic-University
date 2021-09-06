@@ -12,20 +12,25 @@ mysql:
 8. sudo service mysql status
 start if needed
 9. sudo service mysql start
-
-10. sudo mysql -u root
-11. create database genericuniversity;
-12. use mysql;
-13. update user set password=PASSWORD("password") where user='root';
-14. update user set plugin='' where user='root';
-15. flush privileges;
-16. quit
+10. `mysql` or `sudo mysql -uroot -p`
+11. `CREATE USER 'uni'@'localhost' IDENTIFIED BY 'password';`
+12. `GRANT ALL PRIVILEGES ON * . * TO 'uni'@'localhost';`
+13. `FLUSH PRIVILEGES;`
+14. `CREATE DATABASE 'generic';`
+15.  and finally `exit`
 
 17. vim (edit file) .env
 
-DB_DATABASE=genericuniversity
-DB_USERNAME=root
+```
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=generic
+DB_USERNAME=uni
 DB_PASSWORD=password
+
+```
 
 :wq ( in case you didn't know how to quit vim :)
 
