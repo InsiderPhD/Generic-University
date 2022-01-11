@@ -75,9 +75,6 @@ class AdminController extends Controller
     {
         $vulns = Vulnerability::all();
 
-        foreach ($vulns as $vuln)
-        {
-            echo '<p>vuln: ' . $vuln->issue . '</p>';
-        }
+        return view('viewvuln', ['vulnerabilities' => $vulns]);
     }
 }

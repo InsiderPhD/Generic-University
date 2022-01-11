@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
 
-    private $model;
+    protected $model;
 
     public function __construct($modelClass)
     {
