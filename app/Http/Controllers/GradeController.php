@@ -6,13 +6,13 @@ use App\Grade;
 use App\User;
 use Illuminate\Http\Request;
 
-class GradeController  extends AuthApiController
+class GradeController  extends ApiController
 {
     public function __construct()
     {
-        parent::__construct(Grade::class, 'user_id', 'Auth::id()');
+        parent::__construct(Grade::class);
     }
-    use authIndex;
-    use authShow;
+    //use authIndex;
+    //use authShow;
 
 }

@@ -31,7 +31,7 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin'], function () {
 });
 
 Route::group(['as'=>'api.', 'prefix'=>'api'], function () {
-    Route::resource('grades', 'GradeController', ['except' => ['edit', 'create']]);
+    Route::resource('grades', 'GradeController', ['except' => ['edit', 'create'], 'middleware' => 'auth'],);
     Route::resource('users', 'UserController', ['except' => ['edit', 'create']]);
     Route::resource('classes', 'ClassController', ['except' => ['edit', 'create']]);
     Route::resource('roles', 'RoleController', ['except' => ['edit', 'create']]);
